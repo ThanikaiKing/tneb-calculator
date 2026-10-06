@@ -77,18 +77,18 @@ export function PowerGauge({ watts, kilowatts, category }: PowerGaugeProps) {
   const currentCat = categoryConfig[category];
 
   return (
-    <div className="relative flex flex-col items-center justify-center p-6 bg-slate-900/90 rounded-2xl border border-cyan-500/20 box-glow-cyan/30">
+    <div className="relative flex flex-col items-center justify-center p-4 sm:p-6 bg-slate-900/90 rounded-2xl border border-cyan-500/20 box-glow-cyan/30">
       <div className="w-full flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
           <Gauge className="w-4 h-4" />
           <span>Real-Time Power Meter</span>
         </div>
-        <span className="text-[11px] font-mono text-slate-400">Scale: 0 – {(maxScale / 1000).toFixed(0)} kW</span>
+        <span className="text-[10px] sm:text-[11px] font-mono text-slate-400">Scale: 0 – {(maxScale / 1000).toFixed(0)} kW</span>
       </div>
 
-      {/* SVG Arc Gauge */}
-      <div className="relative w-[260px] h-[210px] flex items-center justify-center mt-2">
-        <svg width={size} height={size} className="transform -rotate-90">
+      {/* SVG Arc Gauge - Responsive viewBox */}
+      <div className="relative w-full max-w-[260px] h-[190px] sm:h-[210px] flex items-center justify-center mt-1 sm:mt-2">
+        <svg viewBox={`0 0 ${size} ${size}`} className="w-full h-full transform -rotate-90">
           <defs>
             {/* Gradient definition for arc */}
             <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="100%">

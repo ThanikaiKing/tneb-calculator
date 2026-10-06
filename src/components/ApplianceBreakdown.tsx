@@ -39,24 +39,24 @@ export function ApplianceBreakdown({ watts }: ApplianceBreakdownProps) {
   };
 
   return (
-    <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
-      <div className="flex items-center justify-between mb-4">
+    <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+      <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-1 mb-3 sm:mb-4">
         <div className="flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-cyan-400" />
-          <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+          <Sparkles className="w-4 h-4 text-cyan-400 shrink-0" />
+          <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">
             Household Appliance Equivalency
           </h3>
         </div>
-        <span className="text-xs text-slate-400 font-mono">
+        <span className="text-[11px] sm:text-xs text-slate-400 font-mono">
           Current Load: <span className="text-cyan-300 font-bold">{Math.round(watts)} W</span>
         </span>
       </div>
 
-      <p className="text-xs text-slate-400 mb-5 leading-relaxed">
+      <p className="text-[11px] sm:text-xs text-slate-400 mb-4 sm:mb-5 leading-relaxed">
         See what devices could run simultaneously to consume this exact amount of electricity:
       </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3">
         {appliances.map((app, idx) => (
           <div
             key={idx}

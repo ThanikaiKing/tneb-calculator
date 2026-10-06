@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
+  themeColor: '#07090e',
 };
 
 export const metadata: Metadata = {
@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     'tamil nadu eb tariff calculator',
   ],
   authors: [{ name: 'PulseWatt' }],
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'PulseWatt',
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({

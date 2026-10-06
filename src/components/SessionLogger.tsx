@@ -88,45 +88,46 @@ export function SessionLogger({
   };
 
   return (
-    <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
-      <div className="flex items-center justify-between mb-4">
+    <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div className="flex items-center gap-2">
-          <History className="w-4 h-4 text-cyan-400" />
-          <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+          <History className="w-4 h-4 text-cyan-400 shrink-0" />
+          <h3 className="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider">
             Load Comparison Log
           </h3>
         </div>
         {logs.length > 0 && (
           <button
             onClick={clearAll}
-            className="text-xs text-slate-500 hover:text-red-400 flex items-center gap-1 transition-colors"
+            className="text-[11px] sm:text-xs text-slate-500 hover:text-red-400 flex items-center gap-1 transition-colors px-2 py-1 rounded bg-slate-850 hover:bg-slate-800"
           >
             <Trash2 className="w-3.5 h-3.5" />
-            Clear Log
+            Clear
           </button>
         )}
       </div>
 
-      <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+      <p className="text-[11px] sm:text-xs text-slate-400 mb-3 sm:mb-4 leading-relaxed">
         Save readings before and after turning appliances on/off to measure their exact power draw and added cost.
       </p>
 
       {/* Input form */}
-      <form onSubmit={saveLog} className="flex flex-col sm:flex-row gap-2 mb-5">
+      <form onSubmit={saveLog} className="flex flex-col sm:flex-row gap-2 mb-4 sm:mb-5">
         <div className="relative flex-1">
           <Tag className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
-            placeholder="Label (e.g. 'Base Night Load', 'Living Room AC ON', 'Water Pump')"
+            placeholder="Label (e.g. 'Night Idle', 'AC ON', 'Water Pump')"
             value={labelInput}
+            enterKeyHint="done"
             onChange={(e) => setLabelInput(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+            className="w-full pl-9 pr-3 py-2.5 text-xs bg-slate-950 border border-slate-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
           />
         </div>
         <button
           type="submit"
           disabled={currentWatts <= 0}
-          className="px-4 py-2 text-xs font-semibold rounded-xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 disabled:pointer-events-none text-slate-950 flex items-center justify-center gap-1.5 transition-colors shrink-0"
+          className="px-4 py-2.5 text-xs font-semibold rounded-xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 disabled:pointer-events-none text-slate-950 flex items-center justify-center gap-1.5 transition-colors shrink-0 min-h-[40px] cursor-pointer"
         >
           <Plus className="w-3.5 h-3.5" />
           Save Reading ({Math.round(currentWatts)}W)
@@ -135,7 +136,7 @@ export function SessionLogger({
 
       {/* Logs Table / List */}
       {logs.length === 0 ? (
-        <div className="py-8 text-center border border-dashed border-slate-800 rounded-xl">
+        <div className="py-6 sm:py-8 text-center border border-dashed border-slate-800 rounded-xl">
           <p className="text-xs text-slate-500">No saved readings yet.</p>
           <p className="text-[11px] text-slate-600 mt-1">
             Tap or enter a blink interval, label it, and click &ldquo;Save Reading&rdquo; above.

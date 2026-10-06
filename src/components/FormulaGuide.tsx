@@ -10,30 +10,30 @@ export function FormulaGuide() {
     <div className="rounded-2xl bg-slate-900/90 border border-slate-800 overflow-hidden">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full p-6 flex items-center justify-between text-left hover:bg-slate-800/40 transition-colors"
+        className="w-full p-4 sm:p-6 flex items-center justify-between text-left hover:bg-slate-800/40 transition-colors cursor-pointer"
       >
-        <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
-            <BookOpen className="w-5 h-5" />
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0">
+            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              How It Works & Tamil Nadu EB Tariff Guide
+            <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              Formula & Tamil Nadu Tariff Guide
             </h3>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Learn the physics behind energy meter blinks and how TANGEDCO calculates your bill
+            <p className="text-[11px] sm:text-xs text-slate-400 mt-0.5">
+              How energy meter blinks work & TANGEDCO 60-day slabs
             </p>
           </div>
         </div>
-        <div className="text-slate-400 p-1 rounded-lg bg-slate-800">
-          {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        <div className="text-slate-400 p-1 rounded-lg bg-slate-800 shrink-0">
+          {isOpen ? <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5" /> : <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />}
         </div>
       </button>
 
       {isOpen && (
-        <div className="p-6 pt-0 border-t border-slate-800/80 space-y-6 text-xs text-slate-300">
+        <div className="p-4 sm:p-6 pt-0 border-t border-slate-800/80 space-y-4 sm:space-y-6 text-xs text-slate-300">
           {/* Section 1: The Physics and Math */}
-          <div className="mt-4 p-4 rounded-xl bg-slate-950/70 border border-slate-800">
+          <div className="mt-3 sm:mt-4 p-3.5 sm:p-4 rounded-xl bg-slate-950/70 border border-slate-800">
             <h4 className="text-sm font-semibold text-cyan-300 mb-2 flex items-center gap-2">
               <Calculator className="w-4 h-4" />
               1. The Pulse-to-Wattage Formula

@@ -69,7 +69,7 @@ export function SimulatedMeterLed({ intervalSeconds, watts }: SimulatedMeterLedP
   }, [intervalSeconds, playBeep]);
 
   return (
-    <div className="relative flex flex-col items-center justify-center p-6 bg-slate-900/90 rounded-2xl border border-red-500/20 box-glow-red/40 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center p-4 sm:p-6 bg-slate-900/90 rounded-2xl border border-red-500/20 box-glow-red/40 overflow-hidden">
       {/* Background radial gradient glow */}
       <div
         className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
@@ -81,14 +81,14 @@ export function SimulatedMeterLed({ intervalSeconds, watts }: SimulatedMeterLedP
       />
 
       {/* Header bar */}
-      <div className="w-full flex items-center justify-between mb-4 z-10 text-xs tracking-wider uppercase">
+      <div className="w-full flex items-center justify-between mb-3 sm:mb-4 z-10 text-xs tracking-wider uppercase">
         <div className="flex items-center gap-1.5 text-red-400 font-mono font-semibold">
           <Activity className="w-3.5 h-3.5 animate-pulse text-red-500" />
           <span>Meter LED Pulse</span>
         </div>
         <button
           onClick={() => setSoundEnabled((prev) => !prev)}
-          className={`flex items-center gap-1 px-2.5 py-1 rounded-full border transition-all ${
+          className={`flex items-center gap-1 px-3 py-1.5 rounded-full border text-xs transition-all ${
             soundEnabled
               ? 'bg-red-500/20 border-red-500/50 text-red-300 shadow-[0_0_10px_rgba(239,68,68,0.3)]'
               : 'bg-slate-800/80 border-slate-700 text-slate-400 hover:text-slate-200'
