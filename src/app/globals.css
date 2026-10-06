@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07090e;
+  --foreground: #f1f5f9;
+}
+
+body {
+  background: #07090e;
+  color: #f1f5f9;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom digital glowing effects */
+.glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.glow-red {
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 25px rgba(239, 68, 68, 0.5);
+}
+
+.glow-amber {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.glow-emerald {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.6), 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.box-glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25), inset 0 0 15px -5px rgba(6, 182, 212, 0.1);
+}
+
+.box-glow-red {
+  box-shadow: 0 0 30px 2px rgba(239, 68, 68, 0.4), inset 0 0 20px 2px rgba(239, 68, 68, 0.2);
+}
+
+.box-glow-amber {
+  box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.25), inset 0 0 15px -5px rgba(245, 158, 11, 0.1);
+}
+
+/* Digital meter LCD segment vibe font utility */
+.font-mono-numbers {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Pulse keyframes */
+@keyframes meter-led-flash {
+  0% {
+    opacity: 0.15;
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.2));
+    transform: scale(0.97);
+  }
+  15% {
+    opacity: 1;
+    filter: drop-shadow(0 0 25px #ef4444) drop-shadow(0 0 50px #dc2626);
+    transform: scale(1.08);
+  }
+  35% {
+    opacity: 0.2;
+    filter: drop-shadow(0 0 3px rgba(239, 68, 68, 0.3));
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.15;
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.2));
+    transform: scale(0.97);
+  }
+}
+
+.animate-meter-pulse {
+  animation: meter-led-flash 0.35s ease-out;
+}
+
+/* Custom scrollbar for sleek dark look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
